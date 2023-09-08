@@ -1,0 +1,43 @@
+vi drive.sh
+echo “Please enter your age”
+read age
+if test $age –lt 16
+then
+echo “You are not old enough to drive.”
+else
+echo “You can drive!”
+fi
+
+
+vi check.sh
+echo "Enter a username to check: "
+read name
+if grep $name /etc/passwd > /dev/null
+then
+echo "$name is on this system"
+else
+echo "$name does not exist"
+fi
+
+
+vi num.sh
+echo "Please enter a number greater than 100"
+read num
+while [ $num –le 100 ]
+do
+echo "$num is NOT greater than 100."
+echo “Please enter a number greater than 100”
+read num
+done
+echo “Finally, $num is greater than 100”
+
+
+vi filecheck.sh
+if [ -f /tmp/check ]
+then
+    echo "all is well"
+else
+    echo "/tmp/check file is missing" | mail root
+fi
+
+
